@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #videoElement {
+      
+          background-color: #666;
+        }
+        .canvas {
+          width:300px
+        }
+        </style>
+</head>
+<body>
+    <section class="first-page" style="height: 420px;">
+        <img class="gelombang-kanan" src="gelombangajaib.svg" alt="" srcset="">
+        <img class="ilustrasi" src="foto.svg" alt="">
+        <div class="left-panel">
+            <h1>Photo.Box</h1>
+            <h5>Jadi tuh idenya kayak cuman manfaatin webcam buat kayak photobooth gitu.. 
+                karena pernah si pengalaman jaman SMA bikin photobooth tapi ngedit satu satu kan capek yee, 
+                jadi di koding ae bosh wkwkw..
+            </h5>
+            <a class="btn" href="#photo-box">Take Photo</a>
+        </div>
+    </section>
+    <img class="gelombang-kiri" src="gelombang1.svg" alt="" srcset="">
+    <section>
+      <h2>Photo Shoot</h2>
+      <h5 style="text-align: center; margin-top:0px">Maksimum 4 foto minimum 1 foto, kalo lebih bayar Rp 5000 mweheheheh</h5>
+      <div class="toggle">
+          <label>Frame Tosca</label>
+          <input id="tosca-toogle" name="frame" type="checkbox" onclick="gantiFrame('tosca-toogle','img-tosca')">
+          <label>Frame Doodle</label>
+          <input id="doodle-toogle" name="frame" type="checkbox" checked onclick="gantiFrame('doodle-toogle','img-doodle')">
+          <label>Frame Putih</label>
+          <input id="putih-toogle" name="frame" type="checkbox" checked onclick="gantiFrame('putih-toogle','img-putih')">
+      </div>
+
+      <div class="video-container" id="photo-box">
+          <img id="img-tosca" style="display: none" class="frame" src="frame.png" alt="">
+          <img id="img-putih" class="frame" src="frame3.png" alt="" >
+          <img id="img-doodle" class="frame" src="frame2.png" alt="" checked>
+          
+          <video autoplay="true" id="videoElement"></video>
+          <button class="btn" style="margin-top: 30px" onclick="takepicture()">Take a shoot</button>
+      </div>
+    </section>
+    <section style="margin-bottom:70px">
+      <h2>Result</h2>
+      <h5 style="text-align: center; margin-top:0px">Nih dah jadi boshh mantups hasilnya khan oawkaowkowa</h5>
+   
+          <div class="photo-container">
+            <canvas class="canvas" style="background-color:white"></canvas>
+            <canvas class="canvas" style="background-color:white"></canvas>
+            <canvas class="canvas" style="background-color:white"></canvas>
+            <canvas class="canvas" style="background-color:white"></canvas>
+        
+            
+          </div>
+          <button class="btn reset" onclick="reset()">Reset Stack</button>
+    </section>
+    <footer style="background-color: #1abc9c">
+      <h5 style="padding:10px; margin: 0px; color:white; text-align:center;">Made With &#10084; By Fendew</h5>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
