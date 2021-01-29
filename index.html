@@ -21,9 +21,7 @@
         <img class="ilustrasi" src="foto.svg" alt="">
         <div class="left-panel">
             <h1>Photo.Box</h1>
-            <h5>Jadi tuh idenya kayak cuman manfaatin webcam buat kayak photobooth gitu.. 
-                karena pernah si pengalaman jaman SMA bikin photobooth tapi ngedit satu satu kan capek yee, 
-                jadi di koding ae bosh wkwkw..
+            <h5>Sebuah aplikasi untuk membuat photobox versi rumahan, dikarenakan pandemi diwajibkan untuk PSBB. dengan aplikasi ini, anda dapat merasakan sensasi photobox dirumah bersama orang tersayang..
             </h5>
             <a class="btn" href="#photo-box">Take Photo</a>
         </div>
@@ -31,7 +29,7 @@
     <img class="gelombang-kiri" src="gelombang1.svg" alt="" srcset="">
     <section>
       <h2>Photo Shoot</h2>
-      <h5 style="text-align: center; margin-top:0px">Maksimum 4 foto minimum 1 foto, kalo lebih bayar Rp 5000 mweheheheh</h5>
+      <h5 style="text-align: center; margin-top:0px">Maksimum 6 foto minimum 1 foto, dan dapat menggunakan frame tersedia</h5>
       <div class="toggle">
           <label>Frame Tosca</label>
           <input id="tosca-toogle" name="frame" type="checkbox" onclick="gantiFrame('tosca-toogle','img-tosca')">
@@ -59,11 +57,18 @@
             <canvas class="canvas" style="background-color:white"></canvas>
             <canvas class="canvas" style="background-color:white"></canvas>
             <canvas class="canvas" style="background-color:white"></canvas>
+            <canvas class="canvas" style="background-color:white"></canvas>
+            <canvas class="canvas" style="background-color:white"></canvas>
         
             
           </div>
-          <button class="btn reset" onclick="reset()">Reset Stack</button>
+          <div class="btn-stack">
+            <button class="btn reset" onclick="reset()">Reset Stack</button>
+            <!-- <button class="btn reset" onclick="download()">Download</button> -->
+          </div>
     </section>
+    <img id="gambar-hasil" src="result.png" style="display: none" alt="">
+    <canvas id="hasil" class="hasil" style="display:none;"></canvas>
     <footer style="background-color: #1abc9c">
       <h5 style="padding:10px; margin: 0px; color:white; text-align:center;">Made With &#10084; By Fendew</h5>
     </footer>

@@ -15,7 +15,7 @@ if (navigator.mediaDevices.getUserMedia) {
     });
 }
 
-//setting canvasnya
+
 
 
 
@@ -30,7 +30,9 @@ video.setAttribute('height', height);
 //   target.innerHTML = output
 // });
 
+//setting canvasnya
 let canvas = document.querySelectorAll('.canvas');
+let arrImg =['','','','','','']
 
 let i = 0;
 function takepicture() {
@@ -54,7 +56,8 @@ function takepicture() {
         frame = document.getElementById("img-doodle");
         context.drawImage(frame, 0, 0,canvas[i].width, canvas[i].height);
     }
-    
+    arrImg[i] = (canvas[i].toDataURL('image/png'))
+    console.log(arrImg)
 
     i++
 }
@@ -64,6 +67,7 @@ function reset() {
     var context = canvas[i].getContext('2d');
     context.fillStyle = "#ffffff";
     context.fillRect(0, 0, canvas[i].width, canvas[i].height);
+    arrImg[i] = ''
     }
     i=0;
 }
@@ -77,5 +81,27 @@ function gantiFrame(id,imgId){
     }
     
 }
+
+function download(i){
+    let canvasHasil = document.getElementById('hasil');
+    let gambarr = document.getElementById("gambar-hasil");
+    canvasHasil.setAttribute('width', gambarr.width)
+    canvasHasil.setAttribute('height', gambarr.height)
+    let context = canvasHasil.getContext('2d');
+    
+    context.drawImage(gambarr, 0, 0,gambarr.width, gambarr.height);
+
+    context.drawImage(`<img src=${arrImg[0]}>`, 0, 0);
+
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        
+    }
+
+    let link = document.createElement('a');
+    link.download = 'filename.png';
+    link.href = canvasHasil.toDataURL('image/png')
+    link.click();
+  }
         
         
